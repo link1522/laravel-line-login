@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/goToLineLogin', [AuthController::class, 'goToLineLogin'])->name('goToLineLogin');
+Route::get('/lineCallback', [AuthController::class, 'lineCallback'])->name('lineCallback');
